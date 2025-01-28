@@ -1,11 +1,11 @@
 <table align="center">
     <tr>
         <th>
-            <img src="./src/public/favicon.svg" height="60">           
+            <img src="./src/images/favicon.svg" height="50">           
         </th>
         <th>
             <h1>
-                www.dmccarthy.org
+                dan.sbs
             </h1>
         </th>
     </tr>
@@ -14,7 +14,7 @@
 
 ## 🗒️ License
 
-This Website is provided under the AGPL-3 license. Feel free to use it as inspiration for your own website.
+This Website is provided under the AGPL-3.0 license. Feel free to use it as inspiration for your own website.
 
 ## 🏁 Getting Started
 
@@ -43,37 +43,27 @@ This Website is provided under the AGPL-3 license. Feel free to use it as inspir
 
     From here the site should be running at http://localhost:8000
 
-## 📁 What's inside?
+4. **Build for Production**
 
-```
-┌ src
-│ ├ components
-│ │ └ Self Explanatory : |
-│ ├ css
-│ │ └ Stylesheets for the website
-│ ├ images
-│ │ └ Pictures used on the website
-│ ├ js
-│ │ └ Javascript lol
-│ ├ public
-│ │ └ Publicly accessible content
-│ │
-│ └ HTML files
-│
-├ postcss.config.js
-├ tailwind.config.js
-├ webpack.config.js
-├ package.json
-├ README.md
-└ LICENSE
-```
+    Although we're using webpack, I've written a custom script to handle building all parts of the website
+
+    ```shell
+    ./build.sh
+    ```
+
+    This should create a ./dist folder with the complete static site. Unlike webpack, this will include the html for all pages (*including ones generated from markdown*), the compiled tailwind css, and images. **This also maintains the relative path structure used in the HTML :)**
+
+## ⚙️ General Stuff
+
+Alongside typicaly HTML, I've implemented a component system, and a way to statically generate pages from markdown. The components are organized using [webpack-custom-elements](https://www.npmjs.com/package/webpack-custom-elements) which is a webpack loader I developed for this exact purpose. Markdown to HTML is handled by *./utils/markdownBuilder.js*, and templates are sourced from template.html. NOTE: template.html uses a number of tags like {title} which ard direct references to metadata at the top of the markdown. 
 
 ## 🧰 Tools Used
 
 - [Webpack](https://webpack.js.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [Markdown-it](https://github.com/markdown-it/markdown-it)
 
-### Credit to <a href="https://github.com/twitter/twemoji">Twemoji</a> for the favicon lol.
+#### Credit to <a href="https://github.com/twitter/twemoji">Twemoji</a> for the favicon lol.
 
 ##
 

@@ -1,3 +1,5 @@
+const htmlWriter = require("./utils/HtmlWriter");
+
 /** @type {import('webpack').Config} */
 module.exports = (env) => {
     return {
@@ -20,11 +22,10 @@ module.exports = (env) => {
             path: `${__dirname}/dist`,
             clean: true,
         },
-        plugins: [],
         module: {
             rules: [
+                // Custom Element Loader
                 {
-                    // Name of target file
                     test: /\main.js$/,
                     use: [
                         {
@@ -35,6 +36,7 @@ module.exports = (env) => {
                         },
                     ],
                 },
+                // Tailwind Loader
                 {
                     test: /\.css$/i,
                     use: ["style-loader", "css-loader", "postcss-loader"],

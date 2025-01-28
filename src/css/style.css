@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+    * {
+        box-sizing: border-box;
+    }
+
     html {
         /* Define vars for theme */
         --main: #f6f6f6;
@@ -10,12 +14,13 @@
         --font: #1d2021;
 
         color: var(--font);
-        font-family: Roboto, Arial, sans-serif;
+        font-family: Poppins, Arial, sans-serif;
         -webkit-text-size-adjust: 100%;
         -webkit-font-smoothing: antialiased;
         -ms-text-size-adjust: 100%;
         -moz-osx-font-smoothing: grayscale;
         font-synthesis: none !important;
+        opacity: 1;
 
         svg {
             fill: none;
@@ -38,10 +43,18 @@
     }
 
     .nav-bar {
-        @apply flex gap-4 items-center text-lg py-4 ;
+        @apply flex gap-4 items-center text-lg py-4;
 
         a {
-            @apply px-4 py-2 font-normal hover:bg-[--alt] hover:rounded-lg;
+            @apply px-4 py-2 font-medium hover:bg-[--alt] hover:rounded-lg;
+        }
+    }
+    
+    .nav-bar-mobile {
+        @apply fixed flex flex-col top-28 right-8 bg-[--alt] p-4 rounded-lg;
+
+        * {
+            @apply mx-4 my-2 font-medium hover:opacity-50;
         }
     }
 }

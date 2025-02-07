@@ -63,7 +63,7 @@ Alongside typicaly HTML, I've implemented a component system, and a way to stati
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Markdown-it](https://github.com/markdown-it/markdown-it)
 
-#### Credit to <a href="https://github.com/twitter/twemoji">Twemoji</a> for the favicon lol.
+#### Credit to <a href="https://github.com/twitter/twemoji">Twemoji</a> for the favicon lol
 
 ##
 

@@ -1,0 +1,9 @@
+{
+    "name": "dan.sbs Github Pages Workflow",
+    "description": "Handles updating github pages with changes to main branch",
+    "iconName": "octicon browser",
+    "categories": [
+        "JavaScript",
+        "Pages"
+    ]
+}

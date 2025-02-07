@@ -5,7 +5,7 @@
 ##
 
 # Configure folders to copy
-folders="./src/projects ./src/posts ./src/public"
+folders="./src/projects ./src/posts ./src/images"
 
 # Webpack clears the existing /dist so we don't have to
 echo "===== Building Webpack Bundle ====="
@@ -28,14 +28,20 @@ done
 
 echo "===== Build HTML From Markdown ====="
 for file in ./dist/projects/*.md; do
+    echo $file
+
     # $file and tempalte.html specify the target .md file and the html template
     node ./utils/markdownBuilder.js $file ./utils/template.html
     rm $file
 done
 
-# for file in ./dist/posts/*.md; do
-#     node ./utils/markdownBuilder.js $file
-# done
+for file in ./dist/posts/*.md; do
+    echo $file
+    
+    # $file and tempalte.html specify the target .md file and the html template
+    node ./utils/markdownBuilder.js $file ./utils/template.html
+    rm $file
+done
 
 echo "===== Creating Tailwind File ====="
 npx tailwindcss -i ./src/css/style.css -o ./dist/style.css

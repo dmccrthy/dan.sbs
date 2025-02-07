@@ -5,19 +5,51 @@
  * creates an HTML file in ./dist, nothing else
  */
 
-const markdownit = require("markdown-it");
+// Imports
+const md = require("markdown-it")();
 const fs = require("fs");
 const path = require("path");
 const process = require("process");
 
-const md = markdownit();
-const file = path.resolve(process.argv[2]);
+/**
+ * Build formatted HTML using data
+ * @param {*} content
+ * @param {*} meta
+ * @param {*} template
+ * @returns {string} Formatted HTML
+ */
+function buildPageData(content, meta, template) {
+    template = template.replace("{title}", meta.title);
+    template = template.replace("{content}", content);
 
-console.log(file);
+    template = template.replace("{keywords}", meta.tags);
+    template = template.replace("{slug}", meta.slug);
 
-const data = fs.readFileSync(file);
-console.log(data.toString());
+    return template;
+}
 
-console.log(md.render(data.toString()));
+/**
+ * Handle reading markdown and writing to html in ./dist
+ * @param {string} file Markdown file to read from
+ * @param {string} template HTML template to use
+ */
+function main(file, template) {
+    const templateData = fs.readFileSync(template).toString();
+    const fileData = fs.readFileSync(file).toString().split("---");
+    const metaData = JSON.parse(fileData[0]);
+    const pageData = md.render(fileData[1]);
 
-function createHtmlPage() {}
+    const outputData = buildPageData(pageData, metaData, templateData);
+
+    // Creat dir for page
+    fs.mkdirSync(`./dist/${metaData.slug}`);
+
+    // Write html file to ./dist
+    fs.writeFileSync(
+        path.resolve(`./dist/${metaData.slug}/index.html`),
+        outputData
+    );
+}
+
+// Run main with node arguments
+main(path.resolve(process.argv[2]), path.resolve(process.argv[3]));

@@ -1,9 +1,17 @@
+{
+    "title": "Webpack Custom Elements",
+    "slug": "projects/webpack-custom-elements",
+    "date": "2025-01-19",
+    "tags": "Webpack, JavaScript, NPM, node.js",
+    "excerpt": ""
+}
+---
 # webpack-custom-elements
 
 blah blah blah 
 
-[dan.sbs](https://dan.sbs)
+## Test head
 
-<div>
-    hi
-</div>
+hdhdh ahdhdh
+
+[dan.sbs](https://dan.sbs)

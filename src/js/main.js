@@ -50,9 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("theme").replaceChildren();
         document.getElementById("theme").innerHTML = moon;
     }
-
-    // Show page now that styles are applied
-    document.querySelector("main").classList.remove("hidden");
 });
 
 /**

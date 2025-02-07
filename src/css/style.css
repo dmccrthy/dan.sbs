@@ -20,7 +20,19 @@
         -ms-text-size-adjust: 100%;
         -moz-osx-font-smoothing: grayscale;
         font-synthesis: none !important;
-        opacity: 1;
+
+        body {
+            display: block !important;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
 
         svg {
             fill: none;
@@ -42,6 +54,17 @@
         --font: #ffffff;
     }
 
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: var(--alt);
+    }
+
+    /* Navbar styling */
     .nav-bar {
         @apply flex gap-4 items-center text-lg py-4;
 
@@ -51,10 +74,15 @@
     }
     
     .nav-bar-mobile {
-        @apply fixed flex flex-col top-28 right-8 bg-[--alt] p-4 rounded-lg;
+        @apply fixed flex flex-col top-28 right-8 bg-[--alt] p-4 rounded-xl;
 
         * {
             @apply mx-4 my-2 font-medium hover:opacity-50;
         }
+    }
+
+    /* Class for Generated Markdown */
+    .article {
+
     }
 }

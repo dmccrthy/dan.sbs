@@ -1,8 +1,19 @@
-const htmlWriter = require("./utils/HtmlWriter");
+const TerserPlugin = require("terser-webpack-plugin");
 
-/** @type {import('webpack').Config} */
 module.exports = (env) => {
     return {
+        optimization: {
+            minimize: true,
+            minimizer: [
+                new TerserPlugin({
+                    test: /\.js$/i,
+                    parallel: true,
+                    terserOptions: {
+                        mangle: true,
+                    },
+                }),
+            ],
+        },
         entry: {
             main: "./src/js/main.js",
         },

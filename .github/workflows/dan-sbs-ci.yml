@@ -1,4 +1,4 @@
-name: dan.sbs Website CI
+name: Github Pages Deployment
 
 on:
     push:
@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Build and Push
+    name: Github Pages Deploy
     steps:
       - name: git-checkout
         uses: actions/checkout@v2
@@ -18,7 +18,7 @@ jobs:
       - name: Build
         run: ./build.sh
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.5.2
+        uses: JamesIves/github-pages-deploy-action@4.7.2
         with:
           GITHUB_TOKEN: ${{secrets.API_TOKEN}}
           BRANCH: deployment

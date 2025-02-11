@@ -34,7 +34,11 @@
     </head>
     <body class="bg-[--main] mx-auto w-10/12 md:w-8/12" style="display: none">
         <page-header></page-header>
-        <main class="article mx-8">{content}</main>
+        <main class="post mx-8">
+            <img src="{image}" alt="{title}" />
+            <h1>{title}</h1>
+            {content}
+        </main>
         <page-footer></page-footer>
     </body>
 </html>

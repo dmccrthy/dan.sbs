@@ -5,6 +5,16 @@
 @layer base {
     * {
         box-sizing: border-box;
+        animation: fadeIn 10s;
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
     }
 
     html {
@@ -20,18 +30,10 @@
         -ms-text-size-adjust: 100%;
         -moz-osx-font-smoothing: grayscale;
         font-synthesis: none !important;
+        animation: fadeIn 10s;
 
         body {
             display: block !important;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
         }
 
         svg {
@@ -54,12 +56,11 @@
         --font: #ffffff;
     }
 
-    /* width */
+    /* Scrollbar style */
     ::-webkit-scrollbar {
         width: 10px;
     }
     
-    /* Handle */
     ::-webkit-scrollbar-thumb {
         background: var(--alt);
     }
@@ -81,8 +82,14 @@
         }
     }
 
-    /* Class for Generated Markdown */
-    .article {
+    /* These are the default styles for most elements */
+    main {
+        h1 {
+            @apply font-bold text-3xl py-4;
+        }
 
+        img {
+            @apply rounded-lg mb-4 border-[--font] border-4;
+        }
     }
 }

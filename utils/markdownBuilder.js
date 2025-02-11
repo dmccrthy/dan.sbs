@@ -19,11 +19,12 @@ const process = require("process");
  * @returns {string} Formatted HTML
  */
 function buildPageData(content, meta, template) {
-    template = template.replace("{title}", meta.title);
-    template = template.replace("{content}", content);
+    template = template.replace(/{title}/g, meta.title);
+    template = template.replace(/{content}/g, content);
 
-    template = template.replace("{keywords}", meta.tags);
-    template = template.replace("{slug}", meta.slug);
+    template = template.replace(/{keywords}/g, meta.tags);
+    template = template.replace(/{slug}/g, meta.slug);
+    template = template.replace(/{image}/g, meta.image);
 
     return template;
 }

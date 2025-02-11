@@ -556,6 +556,16 @@ video {
 
 * {
   box-sizing: border-box;
+  animation: fadeIn 10s;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
 html {
@@ -570,17 +580,9 @@ html {
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   font-synthesis: none !important;
+  animation: fadeIn 10s;
   body {
     display: block !important;
-  }
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
   }
   svg {
     fill: none;
@@ -600,13 +602,11 @@ html.dark {
   --font: #ffffff;
 }
 
-/* width */
+/* Scrollbar style */
 
 ::-webkit-scrollbar {
   width: 10px;
 }
-
-/* Handle */
 
 ::-webkit-scrollbar-thumb {
   background: var(--alt);
@@ -666,7 +666,33 @@ html.dark {
   }
 }
 
-/* Class for Generated Markdown */
+/* These are the default styles for most elements */
+
+main {
+  h1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  h1 {
+    font-weight: 700;
+  }
+  img {
+    margin-bottom: 1rem;
+  }
+  img {
+    border-radius: 0.5rem;
+  }
+  img {
+    border-width: 4px;
+  }
+  img {
+    border-color: var(--font);
+  }
+}
 
 .sticky {
   position: sticky;

@@ -5,15 +5,14 @@
 @layer base {
     * {
         box-sizing: border-box;
-        animation: fadeIn 10s;
+    }
 
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
         }
     }
 
@@ -30,7 +29,7 @@
         -ms-text-size-adjust: 100%;
         -moz-osx-font-smoothing: grayscale;
         font-synthesis: none !important;
-        animation: fadeIn 10s;
+        animation: fadeIn 1s;
 
         body {
             display: block !important;
@@ -82,8 +81,8 @@
         }
     }
 
-    /* These are the default styles for most elements */
-    main {
+    /* These are the default styles for blog posts*/
+    .post {
         h1 {
             @apply font-bold text-3xl py-4;
         }

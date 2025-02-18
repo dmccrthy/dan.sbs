@@ -7,6 +7,9 @@
 # Configure folders to copy
 folders="./src/projects ./src/posts ./src/images"
 
+# Specify pages to generate content for
+pages="projects.html posts.html"
+
 # Webpack clears the existing /dist so we don't have to
 echo "===== Building Webpack Bundle ====="
 npm run build
@@ -14,12 +17,13 @@ npm run build
 # Copy /src files to /dist
 echo "===== Writing Files to ./dist ====="
 for file in ./src/*; do
+    # Prevent copying directories
     if test -f $file; then
         echo $file
         cp $file ./dist
     fi
 
-    # Copy folder if in folders
+    # Copy directories if configured
     if [[ $folders == *$file* ]]; then
         echo $file
         cp $file ./dist -r
@@ -43,5 +47,11 @@ for file in ./dist/posts/*.md; do
     rm $file
 done
 
-echo "===== Creating Tailwind File ====="
+# echo "===== Generate Custom Content ====="
+# for 
+
+# echo "===== Create Sitemap.xml ====="
+# npx sitemap < 
+
+echo "===== Create Tailwind File ====="
 npx tailwindcss -i ./src/css/style.css -o ./dist/style.css

@@ -556,15 +556,15 @@ video {
 
 * {
   box-sizing: border-box;
-  animation: fadeIn 10s;
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
+}
 
-    100% {
-      opacity: 1;
-    }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
@@ -580,7 +580,7 @@ html {
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   font-synthesis: none !important;
-  animation: fadeIn 10s;
+  animation: fadeIn 1s;
   body {
     display: block !important;
   }
@@ -666,33 +666,7 @@ html.dark {
   }
 }
 
-/* These are the default styles for most elements */
-
-main {
-  h1 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-  h1 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-  h1 {
-    font-weight: 700;
-  }
-  img {
-    margin-bottom: 1rem;
-  }
-  img {
-    border-radius: 0.5rem;
-  }
-  img {
-    border-width: 4px;
-  }
-  img {
-    border-color: var(--font);
-  }
-}
+/* These are the default styles for blog posts*/
 
 .sticky {
   position: sticky;
@@ -700,11 +674,6 @@ main {
 
 .top-0 {
   top: 0px;
-}
-
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
 }
 
 .mx-auto {
@@ -838,6 +807,11 @@ main {
 }
 
 @media (min-width: 640px) {
+  .sm\:mx-8 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
   .sm\:mb-0 {
     margin-bottom: 0px;
   }

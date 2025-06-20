@@ -7,15 +7,6 @@
         box-sizing: border-box;
     }
 
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
     html {
         /* Define vars for theme */
         --main: #f6f6f6;
@@ -29,7 +20,6 @@
         -ms-text-size-adjust: 100%;
         -moz-osx-font-smoothing: grayscale;
         font-synthesis: none !important;
-        animation: fadeIn 1s;
 
         body {
             display: block !important;

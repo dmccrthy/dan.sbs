@@ -1,5 +1,5 @@
 /**
- * Main js for website
+ * Main client side js for website
  * @author Dan McCarthy
  */
 
@@ -50,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("theme").replaceChildren();
         document.getElementById("theme").innerHTML = moon;
     }
+
+    document.querySelector("body").classList.remove("hidden");
 });
 
 /**

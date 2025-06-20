@@ -14,7 +14,7 @@
 
 ## ⚙️ About
 
-This is the source code for my website [dan.sbs](https://dan.sbs). Alongside the typical HTML, I've implemented a component system, and a way to statically generate pages from markdown. The components are organized using [webpack-custom-elements](https://www.npmjs.com/package/webpack-custom-elements) which is a webpack loader I developed for this exact purpose. Markdown to HTML is handled by *./utils/markdownBuilder.js*, and templates are sourced from template.html. NOTE: template.html uses a number of tags like {title} which ard direct references to metadata at the top of the markdown. 
+This is the source code for my website [dan.sbs](https://dan.sbs). Alongside the typical HTML, I've implemented a component system, and a way to statically generate pages from markdown. The components are organized using [webpack-custom-elements](https://www.npmjs.com/package/webpack-custom-elements) which is a webpack loader I developed for this exact purpose. Markdown to HTML is handled by *./utils/markdownBuilder.js*, and templates are sourced from template.html. NOTE: template.html uses a number of tags like {title} which are direct references to metadata at the top of the markdown. 
 
 ## 🏁 Getting Started
 

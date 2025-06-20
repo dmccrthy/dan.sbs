@@ -1,11 +1,10 @@
 {
   "name": "www.dmccarthy.org",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Source code for my personal site",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "develop": "webpack serve",
+    "start": "webpack serve",
     "build": "webpack --env production --config webpack.config.js"
   },
   "author": "Dan McCarthy",

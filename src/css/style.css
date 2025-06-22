@@ -9,9 +9,10 @@
 
     html {
         /* Define vars for theme */
-        --main: #f6f6f6;
-        --alt: #eceff1;
-        --font: #1d2021;
+        --main: #fbf7f0;
+        --alt: #e9e2d8;
+        --font: #5a5a5a;
+        --highlight: #d9e4dd;
 
         color: var(--font);
         font-family: Poppins, Arial, sans-serif;
@@ -49,7 +50,7 @@
     ::-webkit-scrollbar {
         width: 10px;
     }
-    
+
     ::-webkit-scrollbar-thumb {
         background: var(--alt);
     }
@@ -62,7 +63,7 @@
             @apply px-4 py-2 font-medium hover:bg-[--alt] hover:rounded-lg;
         }
     }
-    
+
     .nav-bar-mobile {
         @apply fixed flex flex-col top-28 right-8 bg-[--alt] p-4 rounded-xl;
 

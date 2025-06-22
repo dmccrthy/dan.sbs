@@ -560,9 +560,10 @@ video {
 
 html {
   /* Define vars for theme */
-  --main: #f6f6f6;
-  --alt: #eceff1;
-  --font: #1d2021;
+  --main: #fbf7f0;
+  --alt: #e9e2d8;
+  --font: #5a5a5a;
+  --highlight: #d9e4dd;
   color: var(--font);
   font-family: Poppins, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -665,6 +666,10 @@ html.dark {
   top: 0px;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -698,9 +703,9 @@ html.dark {
   display: none;
 }
 
-.size-48 {
-  width: 12rem;
-  height: 12rem;
+.size-56 {
+  width: 14rem;
+  height: 14rem;
 }
 
 .size-8 {
@@ -734,14 +739,6 @@ html.dark {
 
 .rounded-2xl {
   border-radius: 1rem;
-}
-
-.border-b-2 {
-  border-bottom-width: 2px;
-}
-
-.border-\[--alt\] {
-  border-color: var(--alt);
 }
 
 .bg-\[--alt\] {
@@ -798,6 +795,11 @@ html.dark {
 
 .font-medium {
   font-weight: 500;
+}
+
+.drop-shadow-2xl {
+  --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 @media (min-width: 640px) {

@@ -37,15 +37,17 @@
         <meta property="og:type" content="" />
         <meta property="og:description" content="" />
     </head>
-    <body class="bg-[--main] mx-auto w-10/12 md:w-8/12 hidden">
+    <body style="display: none">
         <page-header></page-header>
-        <main class="sm:mx-8">
+        <main>
             <section
-                class="flex flex-col md:flex-row items-center pb-10 md:h-72"
+                class="flex flex-col md:flex-row items-center pb-10 md:h-72 lg:h-96"
             >
                 <div class="pb-8 md:pb-0 md:w-1/2">
-                    <h2 class="text-2xl font-medium py-4">About Me:</h2>
-                    <p>
+                    <h2 class="text-2xl 2xl:text-3xl font-medium py-4 2xl:py-6">
+                        About Me:
+                    </h2>
+                    <p class="text-md lg:text-lg 2xl:text-xl">
                         Hi, my name's Dan and I'm an
                         <i>Software Developer</i> from <i>New Hampshire</i> with
                         interests in computer networking and cybersecurity. I’m
@@ -57,7 +59,7 @@
                 <img
                     src="./images/headshot.jpg"
                     alt="Picture of Dan McCarthy"
-                    class="size-56 rounded-2xl mx-auto drop-shadow-2xl"
+                    class="size-56 2xl:size-60 rounded-2xl mx-auto drop-shadow-2xl"
                 />
             </section>
         </main>

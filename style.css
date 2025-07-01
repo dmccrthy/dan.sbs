@@ -564,6 +564,7 @@ html {
   --alt: #e9e2d8;
   --font: #5a5a5a;
   --highlight: #d9e4dd;
+  /* Font styling defaults */
   color: var(--font);
   font-family: Poppins, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -574,6 +575,36 @@ html {
   body {
     display: block !important;
   }
+  body {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body {
+    width: 83.333333%;
+  }
+  body {
+    max-width: 80rem;
+  }
+  body {
+    background-color: var(--main);
+  }
+  @media (min-width: 768px) {
+    body {
+      width: 75%;
+    }
+  }
+  @media (min-width: 1024px) {
+    body {
+      width: 66.666667%;
+    }
+  }
+  @media (min-width: 640px) {
+    main {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+  }
+  /* SVG Icon Styles */
   svg {
     fill: none;
   }
@@ -629,6 +660,12 @@ html.dark {
   a:hover {
     background-color: var(--alt);
   }
+  @media (min-width: 1536px) {
+    a {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+  }
 }
 
 .nav-bar-mobile {
@@ -656,7 +693,7 @@ html.dark {
   }
 }
 
-/* These are the default styles for blog posts*/
+/* These are the default styles for blog posts */
 
 .sticky {
   position: sticky;
@@ -802,6 +839,14 @@ html.dark {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+/* 
+ * Default page styling
+ */
+
+/* 
+ * Component specific styling
+ */
+
 @media (min-width: 640px) {
   .sm\:mx-8 {
     margin-left: 2rem;
@@ -860,5 +905,38 @@ html.dark {
 
   .md\:pt-12 {
     padding-top: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:h-96 {
+    height: 24rem;
+  }
+
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:size-60 {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .\32xl\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .\32xl\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .\32xl\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }

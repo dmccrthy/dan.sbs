@@ -1,0 +1,126 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 
+ * Define custom colors for Tailwind
+ */
+@theme {
+    --color-main: #efefef;
+    --color-alt: #f5f7fa;
+    --color-font: #363635;
+    --color-highlight: #3498db;
+}
+
+@layer theme {
+    :root,
+    :host {
+        @variant dark {
+            --color-main: #1d2021;
+            --color-alt: #161819;
+            --color-font: #ffffff;
+        }
+    }
+}
+
+/* 
+ * Default page styling
+ */
+@layer base {
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        body {
+            display: block !important;
+            @apply bg-main mx-auto w-10/12 md:w-9/12 lg:w-8/12 max-w-7xl;
+        }
+
+        main {
+            @apply sm:mx-8 min-h-[36rem] md:min-h-96 text-wrap;
+        }
+
+        /* Font styling defaults */
+        color: var(--color-font);
+        font-family: Poppins, Arial, sans-serif;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -ms-text-size-adjust: 100%;
+        -moz-osx-font-smoothing: grayscale;
+        font-synthesis: none !important;
+
+        h1 {
+            @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+        }
+
+        h2 {
+            @apply mt-10 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+        }
+
+        h3 {
+            @apply mt-8 scroll-m-20 text-2xl font-semibold tracking-tight;
+        }
+
+        p,
+        span {
+            @apply leading-7 text-lg [&:not(:first-child)]:mt-6;
+        }
+
+        blockquote {
+            @apply mt-6 border-l-2 pl-6 italic;
+        }
+
+        ul,
+        ol {
+            @apply my-6 ml-6 list-disc [&>li]:mt-2;
+        }
+
+        /* SVG Icon Styles */
+        svg {
+            fill: none;
+            width: 2rem;
+            height: 2rem;
+        }
+
+        svg:hover {
+            * {
+                stroke: var(--color-highlight);
+            }
+        }
+
+        svg * {
+            stroke: var(--color-font);
+        }
+    }
+
+    /* Scrollbar style */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-highlight);
+    }
+}
+
+/* 
+ * Component specific styling
+ */
+@layer components {
+    /* Navbar styling */
+    .nav-bar {
+        @apply flex gap-4 items-center text-lg py-4;
+
+        a {
+            @apply px-4 py-2 font-medium 2xl:text-xl hover:border-b-4 hover:border-b-highlight transition-all;
+        }
+    }
+
+    .nav-bar-mobile {
+        @apply fixed flex flex-col top-28 right-8 bg-alt p-4 rounded-xl;
+
+        * {
+            @apply mx-4 my-2 font-medium hover:opacity-50;
+        }
+    }
+}

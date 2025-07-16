@@ -4,7 +4,7 @@
             <div class="pb-8 md:pb-0 md:w-1/2">
                 <h2>About Me:</h2>
                 <p>
-                    Hi, my name's Dan and I'm an
+                    Hi, my name's Dan and I'm a
                     <i>Software Developer</i> from <i>New Hampshire</i> with
                     interests in computer networking and cybersecurity. I’m
                     currently working towards a BS in Computer Science at the
@@ -14,6 +14,7 @@
             </div>
             <NuxtImg
                 src="/images/headshot.jpg"
+                width="400"
                 alt="Picture of Dan McCarthy"
                 class="size-56 2xl:size-60 rounded-full p-1 border-4 border-highlight mx-auto drop-shadow-2xl"
             />
@@ -22,20 +23,8 @@
 </template>
 
 <script lang="ts" setup>
-definePageMeta({
-    pageTransition: {
-        name: "slide-right",
-        mode: "out-in",
-    },
-    middleware(to, from) {
-        if (
-            to.meta.pageTransition &&
-            typeof to.meta.pageTransition !== "boolean"
-        )
-            to.meta.pageTransition.name =
-                +to.params.id! > +from.params.id!
-                    ? "slide-left"
-                    : "slide-right";
-    },
-});
+usePageMeta(
+    "Hi, I'm Dan McCarthy",
+    "Hi, my name's Dan and I'm an Software Developer from New Hampshire with interests in IT and cybersecurity.",
+);
 </script>

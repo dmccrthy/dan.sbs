@@ -2,7 +2,14 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
     compatibilityDate: "2025-05-15",
-    modules: ["@nuxt/fonts", "@nuxt/image", "@nuxt/content", "@nuxt/icon"],
+    modules: [
+        "@nuxt/fonts",
+        "@nuxt/image",
+        "@nuxt/icon",
+        "@nuxtjs/sitemap",
+        "@nuxt/content",
+        "nuxt-og-image",
+    ],
     devtools: { enabled: true },
     css: ["~/assets/main.css"],
     vite: {
@@ -26,7 +33,27 @@ export default defineNuxtConfig({
     },
     fonts: {
         defaults: {
-            weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+            weights: [400, 500, 600, 700, 800, 900],
         },
     },
+
+    image: {
+        loading: "lazy",
+        quality: 80,
+        format: ["webp", "jpg", "png"],
+    },
+
+    // Need to work on this more
+    site: { url: "https://dan.sbs", name: "dan.sbs" },
+    nitro: {
+        prerender: {
+            routes: ["/sitemap.xml", "/404.html"],
+        },
+    },
+    generate: {
+        nojekyll: true,
+        fallback: "404.html",
+    },
+    ssr: true,
+    dev: false,
 });

@@ -10,4 +10,6 @@
 const { data: posts } = await useAsyncData("post", () =>
     queryCollection("posts").all(),
 );
+
+usePageMeta("Posts", "Various blog posts I've written over the years.");
 </script>

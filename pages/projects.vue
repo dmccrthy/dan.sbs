@@ -4,4 +4,6 @@
     </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+usePageMeta("Projects", "Various projects I've worked on over the years.");
+</script>

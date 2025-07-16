@@ -6,7 +6,7 @@
  */
 @theme {
     --color-main: #efefef;
-    --color-alt: #f5f7fa;
+    --color-alt: #a6a7a8;
     --color-font: #363635;
     --color-highlight: #3498db;
 }
@@ -33,11 +33,11 @@
     html {
         body {
             display: block !important;
-            @apply bg-main mx-auto w-10/12 md:w-9/12 lg:w-8/12 max-w-7xl;
+            @apply bg-main mx-auto w-10/12 md:w-9/12 lg:w-8/12 max-w-7xl overflow-x-hidden;
         }
 
         main {
-            @apply sm:mx-8 min-h-[36rem] md:min-h-96 text-wrap;
+            @apply sm:mx-8 min-h-[36rem] md:min-h-96;
         }
 
         /* Font styling defaults */
@@ -68,6 +68,10 @@
 
         blockquote {
             @apply mt-6 border-l-2 pl-6 italic;
+        }
+
+        code {
+            background-color: var(--color-alt);
         }
 
         ul,
@@ -117,7 +121,7 @@
     }
 
     .nav-bar-mobile {
-        @apply fixed flex flex-col top-28 right-8 bg-alt p-4 rounded-xl;
+        @apply absolute flex flex-col top-28 right-8 bg-alt p-4 rounded-xl;
 
         * {
             @apply mx-4 my-2 font-medium hover:opacity-50;

@@ -1,0 +1,1 @@
+nav a{border-bottom:4px solid transparent;transition:all .33s ease}nav a.router-link-active,nav a:hover{border-color:var(--color-highlight)}

@@ -1,75 +1,71 @@
-# Nuxt Minimal Starter
+<table align="center">
+    <tr>
+        <th>
+            <img src="./public/favicon.svg" height="50">  
+        </th>
+        <th>
+            <h1>
+            dan.sbs
+            </h1>
+        </th>
+    </tr>
+</table>
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## ⚙️ About
 
-## Setup
+This is the source code for my website [dan.sbs](https://dan.sbs).
 
-Make sure to install dependencies:
+## 🏁 Getting Started
 
-```bash
-# npm
-npm install
+1.  **Clone the Repo**
 
-# pnpm
-pnpm install
+    Start by cloning the repository to your device
 
-# yarn
-yarn install
+    ```shell
+    git clone https://github.com/dmccrthy/dan.sbs
+    ```
 
-# bun
-bun install
-```
+2.  **Install Dependencies**
 
-## Development Server
+    From here you should navigate to the site folder and install the dependencies
 
-Start the development server on `http://localhost:3000`:
+    ```shell
+    cd dan.sbs
+    npm install
+    ```
 
-```bash
-# npm
-npm run dev
+3.  **Run the Website**
 
-# pnpm
-pnpm dev
+    ```shell
+    npm run dev
+    ```
 
-# yarn
-yarn dev
+    From here the site should be running at http://localhost:3000
 
-# bun
-bun run dev
-```
+4.  **Build for Production**
 
-## Production
+    Run the following command to statically generate the site.
 
-Build the application for production:
+    ```shell
+    npm run generate
+    ```
 
-```bash
-# npm
-npm run build
+    This should create a ./dist folder with the complete static site. Unlike webpack, this will include the html for all pages.
 
-# pnpm
-pnpm build
+## 🧰 Tools Used
 
-# yarn
-yarn build
+- [Vue.js](https://vuejs.org/)
+- [Nuxt](https://nuxt.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-# bun
-bun run build
-```
+#### Credit to <a href="https://github.com/twitter/twemoji">Twemoji</a> for the favicon lol.
 
-Locally preview production build:
+## 🗒️ License
 
-```bash
-# npm
-npm run preview
+This Website is provided under the AGPL-3.0 license. Feel free to use it as inspiration for your own website.
 
-# pnpm
-pnpm preview
+##
 
-# yarn
-yarn preview
+Thanks for Reading
 
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+-Dan

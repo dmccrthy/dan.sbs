@@ -11,16 +11,5 @@
 </template>
 
 <script lang="ts" setup>
-const title: string = "404 Page Not Found";
-const description: string = "This page does note exist";
-
-useSeoMeta({
-    title: `${title} | dan.sbs`,
-    description: description,
-});
-
-defineOgImageComponent("OpenGraph", {
-    title: title,
-    description: description,
-});
+usePageMeta("404 Page Not Found", "This page does note exist");
 </script>

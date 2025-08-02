@@ -6,12 +6,10 @@
 
 <style lang="css">
 .page-enter-from {
-    transform: translateX(-50vw);
     opacity: 0;
 }
 
 .page-leave-to {
-    transform: translateX(50vw);
     opacity: 0;
 }
 

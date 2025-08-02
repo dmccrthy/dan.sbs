@@ -10,11 +10,14 @@ export default defineNuxtConfig({
         "@nuxt/content",
         "nuxt-og-image",
     ],
+
     devtools: { enabled: true },
     css: ["~/assets/main.css"],
+
     vite: {
         plugins: [tailwindcss()],
     },
+
     app: {
         head: {
             title: "dan.sbs",
@@ -22,15 +25,23 @@ export default defineNuxtConfig({
                 lang: "en",
             },
             link: [
+                // Favicon SVG & 32x32
                 {
                     rel: "icon",
                     type: "image/svg+xml",
                     href: "/favicon.svg",
                 },
+                {
+                    rel: "icon",
+                    type: "image/x-icon",
+                    sizes: "32x32",
+                    href: "/favicon.ico",
+                },
             ],
         },
         pageTransition: { name: "page", mode: "out-in" },
     },
+
     fonts: {
         defaults: {
             weights: [400, 500, 600, 700, 800, 900],

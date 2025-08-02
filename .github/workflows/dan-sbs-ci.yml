@@ -2,24 +2,24 @@ name: Github Pages Deployment
 
 on:
     push:
-      branches: [ "main" ]
+        branches: ["main"]
     pull_request:
-      branches: [ "main" ]
-      
+        branches: ["main"]
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    name: Github Pages Deploy
-    steps:
-      - name: git-checkout
-        uses: actions/checkout@v2
-      - name: Install all dependencies
-        run: npm install
-      - name: Build
-        run: ./build.sh
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.7.2
-        with:
-          GITHUB_TOKEN: ${{secrets.API_TOKEN}}
-          BRANCH: deployment
-          FOLDER: dist
+    build:
+        runs-on: ubuntu-latest
+        name: Github Pages Deploy
+        steps:
+            - name: git-checkout
+              uses: actions/checkout@v2
+            - name: Install all dependencies
+              run: npm install
+            - name: Build
+              run: npm run generate
+            - name: Deploy
+              uses: JamesIves/github-pages-deploy-action@v4.7.2
+              with:
+                  GITHUB_TOKEN: ${{secrets.API_TOKEN}}
+                  BRANCH: deployment
+                  FOLDER: .output/public

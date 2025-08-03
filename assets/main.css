@@ -50,7 +50,7 @@
         font-synthesis: none !important;
 
         h1 {
-            @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+            @apply scroll-m-20 text-4xl font-extrabold tracking-tight;
         }
 
         h2 {

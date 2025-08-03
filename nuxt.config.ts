@@ -54,17 +54,40 @@ export default defineNuxtConfig({
         format: ["webp", "jpg", "png"],
     },
 
+    content: {
+        build: {
+            markdown: {
+                highlight: {
+                    // Theme used in all color schemes.
+                    theme: "monokai",
+                    langs: ["js", "shell"],
+                    // OR
+                    // theme: {
+                    //     // Default theme (same as single string)
+                    //     default: "github-light",
+                    //     // Theme used if `html.dark`
+                    //     dark: "github-dark",
+                    //     // Theme used if `html.sepia`
+                    //     sepia: "monokai",
+                    // },
+                },
+            },
+        },
+    },
+
     // Need to work on this more
     site: { url: "https://dan.sbs", name: "dan.sbs" },
     nitro: {
         prerender: {
-            routes: ["/sitemap.xml", "/404.html"],
+            crawlLinks: true,
+            routes: ["/sitemap.xml", "/robots.txt", "/404.html"],
         },
     },
-    generate: {
-        nojekyll: true,
-        fallback: "404.html",
+
+    router: {
+        trailingSlash: false, // or true — just be consistent
     },
+
     ssr: true,
     dev: false,
 });

@@ -15,6 +15,7 @@ export default defineContentConfig({
             source: "posts/*.md",
             schema: z.object({
                 title: z.string(),
+                slug: z.string(),
                 description: z.string(),
                 author: z.string(),
                 date: z.date(),

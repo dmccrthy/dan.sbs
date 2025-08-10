@@ -61,15 +61,6 @@ export default defineNuxtConfig({
                     // Theme used in all color schemes.
                     theme: "monokai",
                     langs: ["js", "shell"],
-                    // OR
-                    // theme: {
-                    //     // Default theme (same as single string)
-                    //     default: "github-light",
-                    //     // Theme used if `html.dark`
-                    //     dark: "github-dark",
-                    //     // Theme used if `html.sepia`
-                    //     sepia: "monokai",
-                    // },
                 },
             },
         },

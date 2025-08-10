@@ -12,7 +12,7 @@
                 <NuxtImg
                     :alt="post.title"
                     :src="post.image"
-                    class="mb-8 w-full rounded-lg"
+                    class="mb-8 w-full rounded-md"
                 />
             </div>
             <ContentRenderer :value="post" />

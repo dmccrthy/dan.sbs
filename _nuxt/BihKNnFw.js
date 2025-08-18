@@ -1,1 +1,0 @@
-import{x as o,o as n,g as s,y as _,_ as f}from"./0Odb6-Hh.js";const u={__name:"ProseA",props:{href:{type:String,default:""},target:{type:String,default:void 0,required:!1}},setup(e){const t=e;return(r,p)=>{const a=f;return n(),o(a,{href:t.href,target:t.target},{default:s(()=>[_(r.$slots,"default")]),_:3},8,["href","target"])}}};export{u as default};

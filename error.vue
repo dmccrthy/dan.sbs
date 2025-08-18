@@ -11,5 +11,5 @@
 </template>
 
 <script lang="ts" setup>
-usePageMeta("404 Page Not Found", "This page does note exist");
+usePageMeta("404 Page Not Found", "This page does not exist");
 </script>

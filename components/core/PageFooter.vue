@@ -1,6 +1,6 @@
 <template>
     <footer
-        class="h-32 bg-main text-center mt-4 mb-16 rounded-2xl flex flex-col sm:flex-row items-center justify-center"
+        class="h-32 bg-main text-center mt-4 mb-16 flex flex-col sm:flex-row items-center justify-center"
     >
         <p class="font-medium mb-4 sm:mb-0 sm:mr-auto">
             <span class="hidden md:contents">Copyright</span> © 2025 Dan

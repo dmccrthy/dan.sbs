@@ -1,0 +1,11 @@
+<template>
+    <main class="flex justify-around items-center mb-40">
+        <h1 class="leading-12 w-1/2">
+            Dan McCarthy is a Software Developer.
+        </h1>
+        <ComputerDemo />
+    </main>
+</template>   
+
+<script setup lang="ts">
+</script>

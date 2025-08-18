@@ -66,6 +66,13 @@ export default defineNuxtConfig({
         },
     },
 
+    components: [
+        {
+            path: '~/components',
+            pathPrefix: false,
+        },
+    ],
+
     // Need to work on this more
     site: { url: "https://dan.sbs", name: "dan.sbs" },
     nitro: {

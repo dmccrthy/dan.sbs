@@ -43,7 +43,7 @@
 
         /* Font styling defaults */
         color: var(--color-font);
-        font-family: Poppins, Arial, sans-serif;
+        font-family: Outfit, Arial, sans-serif;
         -webkit-text-size-adjust: 100%;
         -webkit-font-smoothing: antialiased;
         -ms-text-size-adjust: 100%;
@@ -74,12 +74,10 @@
         /* Add styles to code snippets */
         pre.shiki {
             @apply bg-code rounded-md text-sm font-normal leading-7 my-6 py-3.5 ps-4 pe-4 overflow-x-auto whitespace-pre;
+        }
 
-            /* Copy button */
-            /* button * {
-                position: relative;
-                stroke: var(--color-alt);
-            } */
+        code {
+            font-family: "JetBrains Mono", monospace;
         }
 
         ul,

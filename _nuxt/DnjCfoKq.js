@@ -1,1 +1,0 @@
-import{d as o,u as s,c as t,a as r,o as a}from"./DC8lsHNi.js";const n={class:"w-full h-96 flex justify-center items-center"},i=o({__name:"projects",setup(c){return s("Projects","Various projects I've worked on over the years."),(l,e)=>(a(),t("main",n,e[0]||(e[0]=[r("h2",null,"Coming Soon...",-1)])))}});export{i as default};

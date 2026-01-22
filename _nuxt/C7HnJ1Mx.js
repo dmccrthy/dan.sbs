@@ -1,1 +1,0 @@
-import{U as s,c as r,o,y as a,z as c}from"./DC8lsHNi.js";const n={};function t(e,l){return o(),r("pre",{class:c(e.$props.class)},[a(e.$slots,"default")],2)}const p=s(n,[["render",t]]);export{p as default};

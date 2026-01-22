@@ -2,7 +2,7 @@
     <header class="flex pt-8 mb-12 md:pt-12 z-10 bg-main">
         <span
             class="scroll-m-20 text-3xl font-bold tracking-tight py-4 mr-auto self-center"
-            >dan.sbs</span
+            >8n1.net</span
         >
         <div class="flex items-center mr-4">
             <!-- Desktop Nav -->

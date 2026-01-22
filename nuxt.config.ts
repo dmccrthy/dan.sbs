@@ -20,7 +20,7 @@ export default defineNuxtConfig({
 
     app: {
         head: {
-            title: "dan.sbs",
+            title: "8n1.net",
             htmlAttrs: {
                 lang: "en",
             },
@@ -68,13 +68,13 @@ export default defineNuxtConfig({
 
     components: [
         {
-            path: '~/components',
+            path: "~/components",
             pathPrefix: false,
         },
     ],
 
     // Need to work on this more
-    site: { url: "https://dan.sbs", name: "dan.sbs" },
+    site: { url: "https://8n1.net", name: "8n1.net" },
     nitro: {
         prerender: {
             crawlLinks: true,

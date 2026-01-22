@@ -20,7 +20,7 @@ withDefaults(
                 <h1 class="text-[80px] p-20 font-black text-left">
                     {{ title }}
                 </h1>
-                <p class="text-4xl pb-10 px-20 font-bold mb-0">dan.sbs</p>
+                <p class="text-4xl pb-10 px-20 font-bold mb-0">8n1.net</p>
             </div>
         </div>
     </div>

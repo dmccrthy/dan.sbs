@@ -5,7 +5,7 @@
         </th>
         <th>
             <h1>
-            dan.sbs
+            8n1.net
             </h1>
         </th>
     </tr>
@@ -13,7 +13,7 @@
 
 ## ⚙️ About
 
-This is the source code for my website [dan.sbs](https://dan.sbs).
+This is the source code for my website [8n1.net](https://8n1.net).
 
 ## 🏁 Getting Started
 
@@ -22,7 +22,7 @@ This is the source code for my website [dan.sbs](https://dan.sbs).
     Start by cloning the repository to your device
 
     ```shell
-    git clone https://github.com/dmccrthy/dan.sbs
+    git clone https://github.com/dmccrthy/8n1.net
     ```
 
 2.  **Install Dependencies**
@@ -30,7 +30,7 @@ This is the source code for my website [dan.sbs](https://dan.sbs).
     From here you should navigate to the site folder and install the dependencies
 
     ```shell
-    cd dan.sbs
+    cd 8n1.net
     npm install
     ```
 

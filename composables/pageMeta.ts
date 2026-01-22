@@ -8,8 +8,8 @@ import { useSeoMeta } from "#app";
  */
 export function usePageMeta(title: string, description: string): void {
     useSeoMeta({
-        title: `${title} — Dan McCarthy`,
-        ogTitle: `${title} — Dan McCarthy`,
+        title: `${title} — 8n1.net`,
+        ogTitle: `${title} — 8n1.net`,
         description: description,
         ogDescription: description,
     });

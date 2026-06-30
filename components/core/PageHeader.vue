@@ -1,53 +1,69 @@
 <template>
-    <header class="flex pt-8 mb-12 md:pt-12 z-10 bg-main">
-        <span
-            class="scroll-m-20 text-3xl font-bold tracking-tight py-4 mr-auto self-center"
-            >8n1.net</span
-        >
+    <header class="flex pt-8 mb-12 md:pt-12 z-10 bg-main relative">
+        <h1 class="header-logo">
+              8n1.net
+        </h1>
         <div class="flex items-center mr-4">
             <!-- Desktop Nav -->
-            <nav class="hidden sm:flex nav-bar">
+            <nav class="max-sm:hidden nav-bar">
                 <NuxtLink to="/">Home</NuxtLink>
                 <NuxtLink to="/projects">Projects</NuxtLink>
                 <NuxtLink to="/posts">Posts</NuxtLink>
             </nav>
 
-            <!-- Mobile Nav -->
-            <nav class="flex items-center sm:hidden">
-                <button
-                    @click="toggleDropdown()"
-                    class="hover:cursor-pointer"
-                    aria-label="Open mobile navigation"
-                >
-                    <Icon v-if="mobileDropdown" name="lucide:x" mode="svg" />
-                    <Icon v-else name="lucide:align-justify" mode="svg" />
-                </button>
-
-                <!-- Mobile nav is only shown when toggled -->
-                <div v-if="mobileDropdown" class="nav-bar-mobile">
-                    <NuxtLink to="/">Home</NuxtLink>
-                    <NuxtLink to="/projects">Projects</NuxtLink>
-                    <NuxtLink to="/posts">Posts</NuxtLink>
-                </div>
-            </nav>
+            <!-- Mobile Nav toggle -->
+            <button
+                @click.stop="toggleDropdown()"
+                class="sm:hidden hover:cursor-pointer"
+                aria-label="Open mobile navigation"
+            >
+                <Icon v-if="mobileDropdown" name="lucide:x" mode="svg" />
+                <Icon v-else name="lucide:align-justify" mode="svg" />
+            </button>
         </div>
 
-        <ThemeToggle />
+        <!-- Mobile Nav Dropdown -->
+        <div v-if="mobileDropdown" ref="dropdownRef" class="nav-bar-mobile">
+            <NuxtLink to="/" @click="closeDropdown">Home</NuxtLink>
+            <NuxtLink to="/projects" @click="closeDropdown">Projects</NuxtLink>
+            <NuxtLink to="/posts" @click="closeDropdown">Posts</NuxtLink>
+        </div>
     </header>
 </template>
 
 <script lang="ts" setup>
 const mobileDropdown: Ref<boolean> = ref(false);
+const dropdownRef = ref<HTMLElement | null>(null);
 
 function toggleDropdown(): void {
     mobileDropdown.value = !mobileDropdown.value;
 }
+
+function closeDropdown(): void {
+    mobileDropdown.value = false;
+}
+
+function onDocumentClick(event: MouseEvent): void {
+    if (mobileDropdown.value && dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
+        closeDropdown();
+    }
+}
+
+onMounted(() => {
+    setTimeout(() => {
+        document.addEventListener("click", onDocumentClick);
+    }, 0);
+});
+
+onUnmounted(() => {
+    document.removeEventListener("click", onDocumentClick);
+});
 </script>
 
 <style lang="css">
 nav a {
     border-bottom: 4px solid transparent;
-    transition: all 0.33s ease;
+    transition: border-color 0.33s ease;
 }
 
 nav a:hover,

@@ -2,7 +2,7 @@
 title: "Setup Ruby on Fedora with RVM"
 slug: "setup-ruby-on-fedora"
 description: "A quick guide on how to setup Ruby with RVM on Fedora Linux."
-date: "2024-07-24"
+date: "2025-07-07"
 author: "Dan McCarthy"
 tags: ["Linux", "Ruby"]
 image: "/images/posts/setup-ruby-on-fedora.png"

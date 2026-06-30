@@ -3,8 +3,7 @@
         class="h-32 bg-main text-center mt-4 mb-16 flex flex-col sm:flex-row items-center justify-center"
     >
         <p class="font-medium mb-4 sm:mb-0 sm:mr-auto">
-            <span class="hidden md:contents">Copyright</span> © 2025 Dan
-            McCarthy
+            Copyright © 2023-{{ new Date().getFullYear() }} Dan M.
         </p>
         <div class="flex gap-4">
             <a

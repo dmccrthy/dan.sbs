@@ -39,7 +39,10 @@ export default defineNuxtConfig({
                 },
             ],
         },
-        pageTransition: { name: "page", mode: "out-in" },
+        pageTransition: { 
+            name: "page", 
+            mode: "out-in" 
+        },
     },
 
     fonts: {
@@ -64,6 +67,12 @@ export default defineNuxtConfig({
                 },
             },
         },
+
+        experimental: {
+            // Tells Nuxt Content to use Node's built-in sqlite module
+            // which helps prevents issues with 'better-sqlite3'.
+            sqliteConnector: 'native' 
+        }
     },
 
     components: [

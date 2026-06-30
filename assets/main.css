@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
 
 /* 
  * Define custom colors for Tailwind
@@ -7,20 +6,9 @@
 @theme {
     --color-main: #efefef;
     --color-alt: #a6a7a8;
-    --color-font: #363635;
-    --color-highlight: #4f79b4;
+    --color-font: #4c4c4c;
+    --color-highlight: #57799e;
     --color-code: #1e293b;
-}
-
-@layer theme {
-    :root,
-    :host {
-        @variant dark {
-            --color-main: #1d2021;
-            --color-alt: #161819;
-            --color-font: #ffffff;
-        }
-    }
 }
 
 /* 
@@ -34,11 +22,11 @@
     html {
         body {
             display: block !important;
-            @apply bg-main mx-auto w-10/12 md:w-9/12 lg:w-8/12 max-w-7xl overflow-x-hidden;
+            @apply bg-main mx-auto w-10/12 md:w-9/12 lg:w-8/12 max-w-5xl overflow-x-hidden;
         }
 
         main {
-            @apply sm:mx-8 min-h-[36rem] md:min-h-96;
+            @apply sm:mx-8 min-h-[65vh];
         }
 
         /* Font styling defaults */
@@ -49,6 +37,10 @@
         -ms-text-size-adjust: 100%;
         -moz-osx-font-smoothing: grayscale;
         font-synthesis: none !important;
+
+        h1, h2, h3 {
+            font-family: Lora, Arial, sans-serif;
+        }
 
         h1 {
             @apply scroll-m-20 text-4xl font-extrabold tracking-tight;
@@ -128,10 +120,22 @@
     }
 
     .nav-bar-mobile {
-        @apply absolute flex flex-col top-28 right-8 bg-alt p-4 rounded-xl;
+        @apply absolute flex flex-col top-full right-0 mt-2 bg-main border border-alt p-2 rounded-xl shadow-lg min-w-48;
 
-        * {
-            @apply mx-4 my-2 font-medium hover:opacity-50;
+        a {
+            @apply block px-4 py-3 font-medium rounded-lg hover:bg-alt transition-colors no-underline;
         }
+    }
+
+    /* Logo featured in the PageHeader */
+    .header-logo {
+        /*font-family: 'Jersey 15', arial,  sans-serif;*/
+        transition: all 1s ease-in-out;
+        @apply scroll-m-20 text-4xl font-extrabold tracking-tight py-4 mr-auto self-center;
+    }
+
+    .header-logo:hover {
+        color: var(--color-main);
+        text-shadow: -2px 0 var(--color-font), 0 2px var(--color-font), 2px 0 var(--color-font), 0 -2px var(--color-font);
     }
 }

@@ -1,16 +1,3 @@
-<script setup lang="ts">
-withDefaults(
-    defineProps<{
-        title?: string;
-        description?: string;
-    }>(),
-    {
-        title: "title",
-        description: "",
-    },
-);
-</script>
-
 <template>
     <div
         class="h-full w-full flex items-start justify-start border-solid border-[12px] bg-gray-50"
@@ -25,3 +12,16 @@ withDefaults(
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+withDefaults(
+    defineProps<{
+        title?: string;
+        description?: string;
+    }>(),
+    {
+        title: "title",
+        description: "",
+    },
+);
+</script>

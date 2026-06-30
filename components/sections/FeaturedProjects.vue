@@ -1,23 +1,9 @@
 <template>
-  <main class="px-6 md:px-16 py-10 space-y-6">
-    <h1 class="text-4xl font-bold mb-8 text-center">Projects</h1>
-
-    <SearchFilter
-      :search-query="searchQuery"
-      :active-tags="activeTags"
-      :all-tags="allTags"
-      :filtered="filtered"
-      @update:search-query="searchQuery = $event"
-      @toggle-tag="toggleTag"
-      @clear-filters="clearFilters"
-    />
-
-    <div
-      v-if="filtered.length"
-      class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-    >
+  <section v-if="projects.length" class="py-10">
+    <h2>featured projects</h2>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <a
-        v-for="project in filtered"
+        v-for="project in projects"
         :key="project.id"
         :href="project.link || '#'"
         :target="project.link ? '_blank' : undefined"
@@ -37,7 +23,7 @@
           <p class="text-sm text-font/70 flex-grow mb-4">
             {{ project.description }}
           </p>
-          <div class="flex flex-wrap gap-2">
+          <div class="flex flex-wrap gap-2 mb-4">
             <span
               v-for="tag in project.tags"
               :key="tag"
@@ -46,32 +32,24 @@
               {{ tag }}
             </span>
           </div>
+          <span class="text-sm font-medium text-highlight group-hover:underline mt-auto">
+            View project →
+          </span>
         </div>
       </a>
     </div>
-    <p v-else class="text-center text-font/60 py-12">No projects found.</p>
-  </main>
+  </section>
 </template>
 
 <script setup lang="ts">
-const { data: projects } = await useAsyncData("projects", () =>
+const { data: projects } = await useAsyncData("featured-projects", () =>
   queryCollection("projects").all(),
 )
 
 const sortedProjects = computed(() =>
   [...toValue(projects)]
     .slice()
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3),
 )
-
-const {
-  searchQuery,
-  activeTags,
-  allTags,
-  filtered,
-  toggleTag,
-  clearFilters,
-} = useSearchFilter(sortedProjects)
-
-usePageMeta("Projects", "Various projects I've worked on over the years.")
 </script>

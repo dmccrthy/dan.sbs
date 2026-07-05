@@ -1,9 +1,9 @@
 <template>
-  <section v-if="projects.length" class="py-10">
+  <section v-if="sortedProjects.length" class="py-10">
     <h2>featured projects</h2>
     <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <a
-        v-for="project in projects"
+        v-for="project in sortedProjects"
         :key="project.id"
         :href="project.link || '#'"
         :target="project.link ? '_blank' : undefined"
@@ -44,12 +44,12 @@
 <script setup lang="ts">
 const { data: projects } = await useAsyncData("featured-projects", () =>
   queryCollection("projects").all(),
-)
+);
 
 const sortedProjects = computed(() =>
   [...toValue(projects)]
     .slice()
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3),
-)
+);
 </script>

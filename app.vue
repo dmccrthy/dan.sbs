@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
   <!-- 'appear' tells Vue to run the transition on the initial render -->
   <Transition name="site" appear>
@@ -12,7 +14,9 @@
 <style lang="css">
 /* App initial load transition */
 .site-enter-active {
-  transition: opacity 1.5s ease, transform 0.8s ease-out;
+  transition:
+    opacity 1.5s ease,
+    transform 0.8s ease-out;
 }
 
 .site-enter-from {

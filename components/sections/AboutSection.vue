@@ -4,11 +4,9 @@
       <h2>about me</h2>
       <p>
         Hi, my name's Dan and I'm a
-        <i>Software Developer</i> from <i>New Hampshire</i> with
-        interests in computer networking and cybersecurity. I'm
-        currently working towards a BS in Information Technology at the
-        University of New Hampshire. If you want to get in touch, my
-        links are below.
+        <i>Software Developer</i> from <i>New Hampshire</i> with interests in computer networking
+        and cybersecurity. I'm currently working towards a BS in Information Technology at the
+        University of New Hampshire. If you want to get in touch, my links are below.
       </p>
     </div>
     <NuxtImg

@@ -20,25 +20,16 @@
 </template>
 
 <script setup lang="ts">
-const { data: posts } = await useAsyncData("post", () =>
-  queryCollection("posts").all(),
-)
+const { data: posts } = await useAsyncData("post", () => queryCollection("posts").all());
 
 const sortedPosts = computed(() =>
   [...toValue(posts)]
     .slice()
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
-)
+);
 
-const {
-  searchQuery,
-  activeTags,
-  allTags,
-  filtered,
-  toggleTag,
-  clearFilters,
-} = useSearchFilter(sortedPosts)
+const { searchQuery, activeTags, allTags, filtered, toggleTag, clearFilters } =
+  useSearchFilter(sortedPosts);
 
-usePageMeta("Posts", "Various blog posts I've written over the years.")
+usePageMeta("Posts", "Various blog posts I've written over the years.");
 </script>
-

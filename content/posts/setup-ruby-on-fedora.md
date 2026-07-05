@@ -33,6 +33,6 @@ rvm --default use ruby
 
 - When installing Ruby **you might run into an SSL error**. In my case running _"rvm get head"_ was able to resolved this issue.
 - **Note: RVM expects that your running your shell with the --login flag.** - You should be able to add this after the path to your shell in whatever terminal you use _(EX: "/usr/bin/bash --login")_
-    - This is the same for other shells like zsh.
+  - This is the same for other shells like zsh.
 
 At this point the latest version of Ruby should be installed and ready to use. I've found that this method of setup works alot better than the ~900 different Ruby packages offered through the Fedora repos.

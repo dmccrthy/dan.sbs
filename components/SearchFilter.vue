@@ -16,8 +16,8 @@
       </div>
       <button
         v-if="searchQuery || activeTags.length"
-        @click="clearFilters"
         class="text-sm px-3 py-2 rounded-lg border border-alt hover:border-highlight transition-colors cursor-pointer"
+        @click="clearFilters"
       >
         Clear filters
       </button>
@@ -27,13 +27,13 @@
       <button
         v-for="tag in allTags"
         :key="tag"
-        @click="toggleTag(tag)"
         class="px-3 py-1 rounded-full text-sm font-medium border transition-colors cursor-pointer"
         :class="
           activeTags.includes(tag)
             ? 'bg-highlight text-white border-highlight'
             : 'border-alt hover:border-highlight'
         "
+        @click="toggleTag(tag)"
       >
         {{ tag }}
       </button>
@@ -47,29 +47,29 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-  searchQuery: string
-  activeTags: string[]
-  allTags: string[]
-  filtered: unknown[]
-}>()
+  searchQuery: string;
+  activeTags: string[];
+  allTags: string[];
+  filtered: unknown[];
+}>();
 
 const emit = defineEmits<{
-  "update:searchQuery": [value: string]
-  "update:activeTags": [value: string[]]
-  clearFilters: []
-  toggleTag: [tag: string]
-}>()
+  "update:searchQuery": [value: string];
+  "update:activeTags": [value: string[]];
+  clearFilters: [];
+  toggleTag: [tag: string];
+}>();
 
 function toggleTag(tag: string) {
-  emit("toggleTag", tag)
+  emit("toggleTag", tag);
 }
 
 function clearFilters() {
-  emit("clearFilters")
+  emit("clearFilters");
 }
 
 const searchQuery = computed({
   get: () => props.searchQuery,
   set: (val: string) => emit("update:searchQuery", val),
-})
+});
 </script>

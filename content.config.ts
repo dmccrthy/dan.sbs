@@ -2,56 +2,56 @@ import { defineContentConfig, defineCollection, z } from "@nuxt/content";
 import { asSitemapCollection } from "@nuxtjs/sitemap/content";
 
 export default defineContentConfig({
-    collections: {
-        // Need this to setup sitemap for dynamic pages
-        content: defineCollection(
-            asSitemapCollection({
-                type: "page",
-                source: "**/*.md",
-            }),
-        ),
+  collections: {
+    // Need this to setup sitemap for dynamic pages
+    content: defineCollection(
+      asSitemapCollection({
+        type: "page",
+        source: "**/*.md",
+      }),
+    ),
 
-        posts: defineCollection({
-            type: "page",
-            source: "posts/*.md",
-            schema: z.object({
-                title: z.string(),
-                slug: z.string(),
-                description: z.string(),
-                author: z.string(),
-                date: z.date(),
-                tags: z.array(z.string()),
-                image: z.string(),
-            }),
-        }),
+    posts: defineCollection({
+      type: "page",
+      source: "posts/*.md",
+      schema: z.object({
+        title: z.string(),
+        slug: z.string(),
+        description: z.string(),
+        author: z.string(),
+        date: z.date(),
+        tags: z.array(z.string()),
+        image: z.string(),
+      }),
+    }),
 
-        projects: defineCollection({
-            type: "page",
-            source: "projects/*.md",
-            schema: z.object({
-                title: z.string(),
-                slug: z.string(),
-                description: z.string(),
-                author: z.string(),
-                date: z.date(),
-                tags: z.array(z.string()),
-                image: z.string(),
-                link: z.string().optional(),
-            }),
-        }),
+    projects: defineCollection({
+      type: "page",
+      source: "projects/*.md",
+      schema: z.object({
+        title: z.string(),
+        slug: z.string(),
+        description: z.string(),
+        author: z.string(),
+        date: z.date(),
+        tags: z.array(z.string()),
+        image: z.string(),
+        link: z.string().optional(),
+      }),
+    }),
 
-        experience: defineCollection({
-            type: "page",
-            source: "experience/*.md",
-            schema: z.object({
-                title: z.string(),
-                company: z.string(),
-                startDate: z.date(),
-                endDate: z.date().optional(),
-                description: z.string(),
-                tags: z.array(z.string()).optional(),
-                image: z.string().optional(),
-            }),
-        }),
-    },
+    experience: defineCollection({
+      type: "page",
+      source: "experience/*.md",
+      schema: z.object({
+        title: z.string(),
+        company: z.string(),
+        startDate: z.date(),
+        endDate: z.date().optional(),
+        description: z.string(),
+        tags: z.array(z.string()).optional(),
+        image: z.string().optional(),
+      }),
+    }),
+  },
 });

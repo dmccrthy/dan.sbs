@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-col md:flex-row rounded-lg border border-alt overflow-hidden hover:border-highlight/50 transition-colors">
+  <div
+    class="flex flex-col md:flex-row rounded-lg border border-alt overflow-hidden hover:border-highlight/50 transition-colors"
+  >
     <NuxtImg
       v-if="post.image"
       :src="post.image"
@@ -9,7 +11,13 @@
 
     <div class="p-5 flex flex-col flex-1">
       <p class="text-sm font-semibold text-highlight mb-2">
-        {{ new Date(post.date).toLocaleDateString("en-US", { month: 'short', day: 'numeric', year: 'numeric' }) }}
+        {{
+          new Date(post.date).toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          })
+        }}
       </p>
 
       <h3 class="text-xl font-bold mb-2">
@@ -34,6 +42,6 @@
 
 <script setup lang="ts">
 defineProps<{
-  post: PostsCollectionItem
-}>()
+  post: PostsCollectionItem;
+}>();
 </script>

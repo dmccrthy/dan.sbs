@@ -12,10 +12,7 @@
       @clear-filters="clearFilters"
     />
 
-    <div
-      v-if="filtered.length"
-      class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-    >
+    <div v-if="filtered.length" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <a
         v-for="project in filtered"
         :key="project.id"
@@ -54,24 +51,16 @@
 </template>
 
 <script setup lang="ts">
-const { data: projects } = await useAsyncData("projects", () =>
-  queryCollection("projects").all(),
-)
+const { data: projects } = await useAsyncData("projects", () => queryCollection("projects").all());
 
 const sortedProjects = computed(() =>
   [...toValue(projects)]
     .slice()
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
-)
+);
 
-const {
-  searchQuery,
-  activeTags,
-  allTags,
-  filtered,
-  toggleTag,
-  clearFilters,
-} = useSearchFilter(sortedProjects)
+const { searchQuery, activeTags, allTags, filtered, toggleTag, clearFilters } =
+  useSearchFilter(sortedProjects);
 
-usePageMeta("Projects", "Various projects I've worked on over the years.")
+usePageMeta("Projects", "Various projects I've worked on over the years.");
 </script>

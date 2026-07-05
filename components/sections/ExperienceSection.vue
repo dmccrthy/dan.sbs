@@ -2,23 +2,15 @@
   <section class="py-10">
     <h2>experience</h2>
     <div class="relative mt-8">
-      <div
-        class="absolute left-4 top-0 bottom-0 w-0.5 bg-highlight/30"
-      />
+      <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-highlight/30" />
 
       <div class="space-y-8">
-        <div
-          v-for="(entry, index) in sortedExperience"
-          :key="index"
-          class="relative pl-12"
-        >
+        <div v-for="(entry, index) in sortedExperience" :key="index" class="relative pl-12">
           <div
             class="absolute left-2.5 top-1.5 size-3 rounded-full bg-highlight ring-4 ring-main"
           />
 
-          <div
-            class="rounded-lg border border-alt p-5 hover:border-highlight/50 transition-colors"
-          >
+          <div class="rounded-lg border border-alt p-5 hover:border-highlight/50 transition-colors">
             <div class="flex gap-5">
               <NuxtImg
                 v-if="entry.image"
@@ -28,9 +20,7 @@
               />
 
               <div class="flex-1 min-w-0">
-                <div
-                  class="flex flex-row items-center justify-between gap-2 mb-2"
-                >
+                <div class="flex flex-row items-center justify-between gap-2 mb-2">
                   <div class="text-sm font-semibold text-highlight truncate">
                     {{ entry.company }}
                   </div>
@@ -49,10 +39,7 @@
                   {{ entry.description }}
                 </p>
 
-                <div
-                  v-if="entry.tags?.length"
-                  class="flex flex-wrap gap-2 mt-3"
-                >
+                <div v-if="entry.tags?.length" class="flex flex-wrap gap-2 mt-3">
                   <span
                     v-for="tag in entry.tags"
                     :key="tag"
@@ -73,23 +60,20 @@
 <script setup lang="ts">
 const { data: experience } = await useAsyncData("experience", () =>
   queryCollection("experience").all(),
-)
+);
 
 const sortedExperience = computed(() =>
   [...toValue(experience)]
     .slice()
-    .sort(
-      (a, b) =>
-        new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
-    ),
-)
+    .sort((a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime()),
+);
 
 function formatDate(date: string | Date): string {
-  const d = new Date(date)
+  const d = new Date(date);
   return d.toLocaleDateString("en-US", {
     month: "short",
     year: "numeric",
     timeZone: "UTC",
-  })
+  });
 }
 </script>

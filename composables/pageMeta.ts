@@ -7,15 +7,15 @@ import { useSeoMeta } from "#app";
  * @param description Page description
  */
 export function usePageMeta(title: string, description: string): void {
-    useSeoMeta({
-        title: `${title} — 8n1.net`,
-        ogTitle: `${title} — 8n1.net`,
-        description: description,
-        ogDescription: description,
-    });
+  useSeoMeta({
+    title: `${title} — 8n1.net`,
+    ogTitle: `${title} — 8n1.net`,
+    description: description,
+    ogDescription: description,
+  });
 
-    defineOgImageComponent("OpenGraph", {
-        title: title,
-        description: description,
-    });
+  defineOgImageComponent("OpenGraph", {
+    title: title,
+    description: description,
+  });
 }

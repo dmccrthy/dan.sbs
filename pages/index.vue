@@ -3,7 +3,6 @@
     <AboutSection />
     <ExperienceSection />
     <FeaturedProjects />
-    <TwoTruthsAndALie />
   </main>
 </template>
 

@@ -1,7 +1,5 @@
 <template>
-  <footer
-    class="h-32 bg-main text-center mt-4 mb-16 flex flex-col sm:flex-row items-center justify-center"
-  >
+  <footer class="h-32 text-center mt-4 mb-16 flex flex-col sm:flex-row items-center justify-center">
     <p class="font-medium mb-4 sm:mb-0 sm:mr-auto">
       Copyright © 2023-{{ new Date().getFullYear() }} Dan M.
     </p>

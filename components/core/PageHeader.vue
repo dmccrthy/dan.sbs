@@ -1,6 +1,6 @@
 <template>
-  <header class="flex pt-8 mb-12 md:pt-12 z-10 bg-main relative">
-    <h1 class="header-logo">8n1.net</h1>
+  <header class="flex pt-8 mb-12 md:pt-12 z-10 relative">
+    <NuxtLink to="/" class="header-logo">8n1.net</NuxtLink>
     <div class="flex items-center mr-4">
       <!-- Desktop Nav -->
       <nav class="max-sm:hidden nav-bar">

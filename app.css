@@ -20,9 +20,17 @@
   }
 
   html {
+    background-color: var(--color-main);
+    /* background-image: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-alt) 50%, transparent) 0.75px,
+      transparent 0.75px
+    );
+    background-size: 24px 24px; */
+
     body {
       display: block !important;
-      @apply bg-main mx-auto w-10/12 md:w-9/12 lg:w-8/12 max-w-5xl overflow-x-hidden;
+      @apply mx-auto w-10/12 md:w-9/12 lg:w-8/12 max-w-5xl overflow-x-hidden;
     }
 
     main {
@@ -99,12 +107,30 @@
 
   /* Scrollbar style */
   ::-webkit-scrollbar {
-    height: 10px;
-    width: 10px;
+    height: 8px;
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: color-mix(in srgb, var(--color-alt) 15%, transparent);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--color-highlight);
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-highlight) 80%, transparent),
+      var(--color-highlight),
+      color-mix(in srgb, var(--color-highlight) 80%, transparent)
+    );
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      var(--color-highlight),
+      color-mix(in srgb, var(--color-highlight) 60%, white),
+      var(--color-highlight)
+    );
   }
 }
 
@@ -131,9 +157,9 @@
 
   /* Logo featured in the PageHeader */
   .header-logo {
-    /*font-family: 'Jersey 15', arial,  sans-serif;*/
     transition: all 1s ease-in-out;
     @apply scroll-m-20 text-4xl font-extrabold tracking-tight py-4 mr-auto self-center;
+    font-family: Lora, Arial, sans-serif;
   }
 
   .header-logo:hover {

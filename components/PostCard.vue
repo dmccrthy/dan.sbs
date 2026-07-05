@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col md:flex-row rounded-lg border border-alt overflow-hidden hover:border-highlight/50 transition-colors"
+    class="flex flex-col md:flex-row rounded-lg border border-alt overflow-hidden hover:border-highlight/50 transition-colors bg-main"
   >
     <NuxtImg
       v-if="post.image"

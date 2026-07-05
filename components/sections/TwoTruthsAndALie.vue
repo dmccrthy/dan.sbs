@@ -10,7 +10,7 @@
         v-for="(item, index) in statements"
         :key="index"
         :disabled="revealed"
-        class="rounded-lg border p-5 text-left transition-all duration-300 cursor-pointer disabled:cursor-default"
+        class="rounded-lg border p-5 text-left transition-all duration-300 cursor-pointer disabled:cursor-default bg-main"
         :class="cardClass(index)"
         @click="guess(index)"
       >

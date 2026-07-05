@@ -19,7 +19,7 @@
         :href="project.link || '#'"
         :target="project.link ? '_blank' : undefined"
         :rel="project.link ? 'noopener noreferrer' : undefined"
-        class="rounded-lg border border-alt hover:border-highlight/50 transition-colors flex flex-col overflow-hidden group"
+        class="rounded-lg border border-alt hover:border-highlight/50 transition-colors flex flex-col overflow-hidden group bg-main"
       >
         <NuxtImg
           v-if="project.image"

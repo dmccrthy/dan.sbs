@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   ],
 
   devtools: { enabled: true },
-  css: ["~/assets/main.css"],
+  css: ["~/app.css"],
 
   vite: {
     plugins: [tailwindcss()],

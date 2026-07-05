@@ -4,9 +4,9 @@
   <!-- 'appear' tells Vue to run the transition on the initial render -->
   <Transition name="site" appear>
     <div>
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
+      <PageHeader />
+      <NuxtPage />
+      <PageFooter />
     </div>
   </Transition>
 </template>

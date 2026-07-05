@@ -55,7 +55,6 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   "update:searchQuery": [value: string];
-  "update:activeTags": [value: string[]];
   clearFilters: [];
   toggleTag: [tag: string];
 }>();

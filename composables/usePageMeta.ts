@@ -1,5 +1,3 @@
-import { useSeoMeta } from "#app";
-
 /**
  * Define all of the SEO/Meta tags for a given page.
  *

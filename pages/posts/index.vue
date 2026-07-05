@@ -13,7 +13,7 @@
     />
 
     <div v-if="filtered.length" class="flex flex-col space-y-6">
-      <PageCard v-for="post in filtered" :key="post.id" :post="post" />
+      <PostCard v-for="post in filtered" :key="post.id" :post="post" />
     </div>
     <p v-else class="text-center text-font/60 py-12">No posts found.</p>
   </main>

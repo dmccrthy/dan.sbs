@@ -4,9 +4,9 @@
     <div class="flex items-center mr-4">
       <!-- Desktop Nav -->
       <nav class="max-sm:hidden nav-bar">
-        <NuxtLink to="/">Home</NuxtLink>
-        <NuxtLink to="/projects">Projects</NuxtLink>
-        <NuxtLink to="/posts">Posts</NuxtLink>
+        <NuxtLink to="/" class="hover:text-highlight transition-colors">Home</NuxtLink>
+        <NuxtLink to="/projects" class="hover:text-highlight transition-colors">Projects</NuxtLink>
+        <NuxtLink to="/posts" class="hover:text-highlight transition-colors">Posts</NuxtLink>
       </nav>
 
       <!-- Mobile Nav toggle -->
@@ -22,9 +22,15 @@
 
     <!-- Mobile Nav Dropdown -->
     <div v-if="mobileDropdown" ref="dropdownRef" class="nav-bar-mobile">
-      <NuxtLink to="/" @click="closeDropdown">Home</NuxtLink>
-      <NuxtLink to="/projects" @click="closeDropdown">Projects</NuxtLink>
-      <NuxtLink to="/posts" @click="closeDropdown">Posts</NuxtLink>
+      <NuxtLink to="/" class="hover:text-highlight transition-colors" @click="closeDropdown"
+        >Home</NuxtLink
+      >
+      <NuxtLink to="/projects" class="hover:text-highlight transition-colors" @click="closeDropdown"
+        >Projects</NuxtLink
+      >
+      <NuxtLink to="/posts" class="hover:text-highlight transition-colors" @click="closeDropdown"
+        >Posts</NuxtLink
+      >
     </div>
   </header>
 </template>
@@ -65,11 +71,14 @@ onUnmounted(() => {
 <style lang="css">
 nav a {
   border-bottom: 4px solid transparent;
-  transition: border-color 0.33s ease;
+  transition:
+    border-color 0.33s ease,
+    color 0.33s ease;
 }
 
 nav a:hover,
-nav a.router-link-active {
+nav a.router-link-exact-active {
   border-color: var(--color-highlight);
+  color: var(--color-highlight);
 }
 </style>

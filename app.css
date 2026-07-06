@@ -5,10 +5,9 @@
  */
 @theme {
   --color-main: #efefef;
-  --color-alt: #a6a7a8;
+  --color-alt: #d4d4d6;
   --color-font: #4c4c4c;
   --color-highlight: #57799e;
-  --color-code: #1e293b;
 }
 
 /* 
@@ -20,13 +19,13 @@
   }
 
   html {
-    background-color: var(--color-main);
-    /* background-image: radial-gradient(
-      circle,
-      color-mix(in srgb, var(--color-alt) 50%, transparent) 0.75px,
-      transparent 0.75px
+    color-scheme: light;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, #d4c5b0 18%, var(--color-main)),
+      var(--color-main) 50%,
+      color-mix(in srgb, var(--color-highlight) 14%, var(--color-main))
     );
-    background-size: 24px 24px; */
 
     body {
       display: block !important;
@@ -75,7 +74,9 @@
 
     /* Add styles to code snippets */
     pre.shiki {
-      @apply bg-code rounded-md text-sm font-normal leading-7 my-6 py-3.5 ps-4 pe-4 overflow-x-auto whitespace-pre;
+      @apply rounded-lg text-sm font-normal leading-7 my-6 py-3.5 ps-4 pe-4 overflow-x-auto whitespace-pre;
+      background: color-mix(in srgb, var(--color-font) 4%, var(--color-main));
+      border: 1px solid var(--color-alt);
     }
 
     code {
@@ -104,34 +105,6 @@
       stroke: var(--color-font);
     }
   }
-
-  /* Scrollbar style */
-  ::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: color-mix(in srgb, var(--color-alt) 15%, transparent);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--color-highlight) 80%, transparent),
-      var(--color-highlight),
-      color-mix(in srgb, var(--color-highlight) 80%, transparent)
-    );
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(
-      180deg,
-      var(--color-highlight),
-      color-mix(in srgb, var(--color-highlight) 60%, white),
-      var(--color-highlight)
-    );
-  }
 }
 
 /* 
@@ -151,7 +124,11 @@
     @apply absolute flex flex-col top-full right-0 mt-2 bg-main border border-alt p-2 rounded-xl shadow-lg min-w-48;
 
     a {
-      @apply block px-4 py-3 font-medium rounded-lg hover:bg-alt transition-colors no-underline;
+      @apply block px-4 py-3 font-medium rounded-lg transition-colors no-underline;
+    }
+
+    a:hover {
+      @apply bg-alt text-highlight;
     }
   }
 

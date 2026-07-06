@@ -63,7 +63,7 @@ export default defineNuxtConfig({
       markdown: {
         highlight: {
           // Theme used in all color schemes.
-          theme: "monokai",
+          theme: "github-light",
           langs: ["js", "shell"],
         },
       },

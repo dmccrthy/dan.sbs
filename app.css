@@ -6,7 +6,7 @@
 @theme {
   --color-main: #efefef;
   --color-alt: #d4d4d6;
-  --color-font: #4c4c4c;
+  --color-font: #313131;
   --color-highlight: #57799e;
 }
 
@@ -147,4 +147,32 @@
       2px 0 var(--color-font),
       0 -2px var(--color-font);
   }
+}
+
+/* 
+ * Global scrollbar styling (floating, rounded thumb)
+ */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-highlight) 45%, transparent) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--color-highlight) 40%, transparent);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(in srgb, var(--color-highlight) 75%, transparent);
 }

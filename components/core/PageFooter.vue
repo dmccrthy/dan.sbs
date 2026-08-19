@@ -5,6 +5,9 @@
         <p class="text-xs font-semibold uppercase tracking-widest text-font/50 mb-3">Pages</p>
         <nav class="flex flex-col gap-[3px] text-base font-medium">
           <NuxtLink to="/" class="self-start hover:text-highlight transition-colors">Home</NuxtLink>
+          <NuxtLink to="/about" class="self-start hover:text-highlight transition-colors"
+            >About</NuxtLink
+          >
           <NuxtLink to="/projects" class="self-start hover:text-highlight transition-colors"
             >Projects</NuxtLink
           >

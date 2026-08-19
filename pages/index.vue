@@ -1,14 +1,13 @@
 <template>
   <main>
-    <AboutSection />
-    <ExperienceSection />
-    <FeaturedProjects />
+    <NeofetchTerminal />
+    <RandomAssortment />
   </main>
 </template>
 
 <script setup lang="ts">
 usePageMeta(
-  "Hi, I'm Dan McCarthy",
-  "Hi, my name's Dan and I'm an Software Developer from New Hampshire with interests in IT and cybersecurity.",
+  "Home",
+  "Welcome to 8n1.net — the corner of the internet where Dan McCarthy writes, builds, and tinkers.",
 );
 </script>

@@ -1,12 +1,12 @@
 <template>
   <div
-    class="flex flex-col md:flex-row rounded-lg border border-alt overflow-hidden hover:border-highlight/50 transition-colors bg-main"
+    class="flex flex-col rounded-lg border border-alt overflow-hidden hover:border-highlight/50 transition-colors bg-main"
   >
     <NuxtImg
       v-if="post.image"
       :src="post.image"
       :alt="post.title"
-      class="w-full md:w-56 h-48 md:h-auto object-cover shrink-0"
+      class="w-full h-48 object-cover shrink-0"
     />
 
     <div class="p-5 flex flex-col flex-1">
